@@ -1,0 +1,25 @@
+#copy this. works on mac never tested on linux
+
+eyeRandom=$((RANDOM%5))
+case $eyeRandom in
+    0) eyeColor="%F{red}" ;;
+    1) eyeColor="%F{blue}" ;;
+    2) eyeColor="%F{green}" ;;
+    3) eyeColor="%F{yellow}" ;;
+    4) eyeColor="%F{magenta}" ;;
+    5) eyeColor="%F{violet}" ;;
+    *) eyeColor="%F{black}" ;;
+esac
+mouthChar="%F{red} ㉨ %F{red}"
+eyeRandom=$((((RANDOM/10))%6))
+case $eyeRandom in
+    0) eyeChar="●" ;;
+    1) eyeChar="✪" ;;
+    2) eyeChar="=" ;;
+    3) eyeChar="v" ;;
+    4) eyeChar="^" ;;
+    5) eyeChar="T" ;;
+    *) eyeChar="V" ;;
+esac
+
+PROMPT="$eyeColor($eyeChar%F{black}$mouthChar$eyeColor$eyeChar)%F{black}@%F{red}%1~%F{black}=>.. "
